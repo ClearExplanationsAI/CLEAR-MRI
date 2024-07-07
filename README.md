@@ -5,12 +5,12 @@ There are three folders. CLEAR-MRI stores the scripts for the explaianable AI me
 
 
 ## Prerequisites 
-CLEAR-MRI is written in Python 3.7.9 and runs on Windows 10.The YAML file specifing the required configuration is CLEARMRI.yml
+CLEAR-MRI is written in Python 3.7.9 and runs on Windows 10. The YAML file specifing the required configuration is CLEARMRI.yml
 
 CLEAR-MRI requires the following input files:
-A Pytorch CNN that classifies each 2-D MRI image. These can either be stitched images or hybrid images.
-A numpy files of 2D MRI images.  The dimensions are (number of patients, 632, 740).
-A spreadsheet specifying Patient ID and the spoken decscription scores of each patient.
+*A Pytorch CNN that classifies each 2-D MRI image. These can either be stitched images or hybrid images.
+*A numpy files of 2D MRI images.  The dimensions are (number of patients, 632, 740).
+*A spreadsheet specifying Patient ID and the spoken decscription scores of each patient.
 
 
 ## Installation 
