@@ -23,8 +23,8 @@ The model to be trained is specified by the following 3 parameters at the begini
 
 The following input files are required:
 
-*  a numpy array of 2D stitched MRI images.  Each stitched image consists of sixty-four axial cross-sectional spatially normalised MRI slices in a 2D 632 x 760 image.
-* 
+*  a numpy array of 2D stitched MRI images created from the PLORAS dataset.  Each stitched image consists of sixty-four axial cross-sectional spatially normalised MRI slices in a 2D 632 x 760 image.
+*  a spreadsheet specifying the patient ID, the  PLORAS tabular features specified in section 2.1 of the paper (initial severity, left hemisphere lesion size, recovery time, CAT spoken description scores), and the group number each patient ID was assigned to for training/validation of the CNNs. 
 
 ## CLEAR-MRI
 CLEAR-MRI requires the following input files:
