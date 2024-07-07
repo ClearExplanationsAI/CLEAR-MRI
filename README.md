@@ -1,12 +1,32 @@
 # MRI
 Scripts for the paper 'Predicting recovery following stroke: Deep learning, multimodal data and feature selection using explainable AI'
 
-There are three folders. CLEAR-MRI stores the scripts for the explaianable AI method CLEAR-MRI that explains the classifications of a CNN trained on the PLORAS dataset. 
+There are three folders. 
+
+* CNN training stores the scripts for training the CNNs referenced in the paper.
+* CLEAR-MRI stores the scripts for the explaianable AI method CLEAR-MRI that explains the classifications of a CNN trained on the PLORAS dataset. 
 
 
 ## Prerequisites 
 CLEAR-MRI is written in Python 3.7.9 and runs on Windows 10. The YAML file specifing the required configuration is CLEARMRI.yml
 
+## CNN training.
+
+Lockbox.py is the script for training the CNNs evaulated in the paper.
+
+Nine CNN models can be trained, as listed on page 9 of the paper.
+
+The model to be trained is specified by the following 3 parameters at the begining of the Lockbox.py script.
+* 'model_type': ResNet', 'DAFT','Early_Fusion', 'ResNet3D', 'Early_Fusion_3D','Lightweight'
+* 'use_ROI_dataset'. Set to true for model to be trained with ROI dataset rather than with Stitched MRI dataset
+* 'stitched_images_with_symbols'. Set to true to use Hybrid Stitched MRI dataset
+
+The following input files are required:
+
+*  a numpy array of 2D stitched MRI images.  Each stitched image consists of sixty-four axial cross-sectional spatially normalised MRI slices in a 2D 632 x 760 image.
+* 
+
+## CLEAR-MRI
 CLEAR-MRI requires the following input files:
 * A Pytorch CNN that classifies each 2-D MRI image. These can either be stitched images or hybrid images.
 *  numpy files of 2D MRI images.  The dimensions are (number of patients, 632, 740).
