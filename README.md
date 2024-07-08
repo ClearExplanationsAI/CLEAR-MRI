@@ -31,6 +31,7 @@ CLEAR-MRI requires the following input files:
 * A Pytorch CNN that classifies each 2-D MRI image. These can either be stitched images or hybrid images.
 *  numpy files of 2D MRI images.  The dimensions are (number of patients, 632, 740).
 *  A spreadsheet specifying Patient ID and the spoken decscription scores of each patient.
+*  A csv file mapping the 632 x 740 pixels in each stitched image to grey matter anatomical regions-of-interest (ROIs).T he Matlab script ROIs_map.m created this csv file using Brainnetome_v1.0.2\Template\aal.nii
 
 
 ## Installation 
