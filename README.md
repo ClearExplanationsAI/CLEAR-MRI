@@ -24,14 +24,15 @@ The model to be trained is specified by the following 3 parameters at the begini
 The following input files are required:
 
 *  a numpy array of 2D stitched MRI images created from the PLORAS dataset.  Each stitched image consists of sixty-four axial cross-sectional spatially normalised MRI slices in a 2D 632 x 760 image.
-*  a spreadsheet specifying the patient ID, the  PLORAS tabular features specified in section 2.1 of the paper (initial severity, left hemisphere lesion size, recovery time, CAT spoken description scores), and the group number each patient ID was assigned to for training/validation of the CNNs. 
+*  a spreadsheet specifying the patient ID, the  PLORAS tabular features specified in section 2.1 of the paper (initial severity, left hemisphere lesion size, recovery time, CAT spoken description scores), and the group number each patient ID was assigned to for training/validation of the CNNs.
+*  a csv file mapping the 632 x 740 pixels in each stitched image to grey matter anatomical regions-of-interest (ROIs).T he Matlab script ROIs_map.m created this csv file using Brainnetome_v1.0.2\Template\aal.nii
+* 
+
 
 ## CLEAR-MRI
 CLEAR-MRI requires the following input files:
-* A Pytorch CNN that classifies each 2-D MRI image. These can either be stitched images or hybrid images.
-*  numpy files of 2D MRI images.  The dimensions are (number of patients, 632, 740).
-*  A spreadsheet specifying Patient ID and the spoken decscription scores of each patient.
-*  A csv file mapping the 632 x 740 pixels in each stitched image to grey matter anatomical regions-of-interest (ROIs).T he Matlab script ROIs_map.m created this csv file using Brainnetome_v1.0.2\Template\aal.nii
+*  the Pytorch CNN that classifies each 2-D MRI image. These can either be stitched images or hybrid images.
+*  numpy array of 2D stitched images, spreadsheet of PLORAS tabular data and file mapping stitch images to ROIs of 2D MRI images specified above.
 
 
 ## Installation 
