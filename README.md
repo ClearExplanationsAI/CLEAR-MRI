@@ -34,6 +34,8 @@ CLEAR-MRI requires the following input files:
 *  the Pytorch CNN that classifies each 2-D MRI image. These can either be stitched images or hybrid images.
 *  numpy array of 2D stitched images, spreadsheet of PLORAS tabular data and file mapping stitch images to ROIs of 2D MRI images specified above.
 
+##  Statistical Verification
+
 
 ## Installation 
 The file CLEAR_settings.py contains the parameter variables for CLEAR MRI. Open CLEAR_settings.py and change the value of parameter CLEAR_path to the name of the directory you have created for CLEAR e.g., CLEAR_path='D:/CLEAR/'. CLEAR Image requires the user to have created both a directory containing the original image files and another directory containing the corresponding GAN images. The addresses of these two directories should be assigned in CLEAR_settings to the parameters: ‘input_images_path’ and ‘GAN_images_path’ e.g., ‘input_images_path’ = ‘D:/Diseased_Xrays/’. In order to get the original images for CheXpert, the CheXpert dataset will need to be downloaded: https://stanfordmlgroup.github.io/competitions/chexpert/ . The GAN generated images generated from CheXpert are in folder ‘CheXpert GAN’. The file ‘Medical.csv' lists the images that were used in our paper. ‘Synthetic Images .csv’ lists the synthetic images used, these are included in the folder ‘Synthetic test images’, the corresponding GAN images are in the folder ‘GAN Synthetic data’. 
