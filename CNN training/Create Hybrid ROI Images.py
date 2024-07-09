@@ -49,7 +49,7 @@ CLEAR_settings.init()
 rectangular_images = np.load(MRI_path + 'rectangular_images.npy')
 new_training_array = np.zeros((len(rectangular_images), image_size, image_size))
 top_segments = [81, 85, 13, 57, 63, 11, 29,71,83,61,7,37]
-new_training_grid = np.genfromtxt("C:/Users/adamp/Dropbox/CLEAR MRI - desk/CHS 12 segs grid_11_12_segs.csv", delimiter=',')
+new_training_grid = np.genfromtxt("C:/Users/adamp/Dropbox/CLEAR MRI - desk/grid_for_11_12_ROIs.csv", delimiter=',')
 segments = np.genfromtxt("C:/Users/adamp/Dropbox/CLEAR MRI - desk/632_by_760_segments.csv", delimiter=',')
 
 for Master_idx in range(rectangular_images.shape[0]):
