@@ -1,0 +1,263 @@
+body{font-family: Calibri;
+margin-left: 15%;
+margin-right: 20%}
+
+
+h1{color: #e54867;
+    font-size: 35px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width:100%;
+    text-align: left
+    font-family: Arial;}
+
+h2{color:darkblue;
+    margin-top: 20px;
+    font-size: 25px;
+    font-family: Arial;
+    margin-bottom: 20px;
+    margin-left: 0%;
+    margin-right: 0%;
+    width: 100%}
+
+.main-text{align-self: flex-start;
+           margin-top: 10px;
+           font-size: 20px;
+           width: 100%
+}
+
+.main-text2{text-align: justify;
+           margin-top: 0px; 
+           margin-bottom: 5px;
+           float: left;
+           font-size: 25px;
+           color: #6255f5;
+}
+
+
+
+
+
+.mystyle {
+    font-size: 12pt; 
+    font-family: Arial;
+    border-collapse: collapse; 
+    border: 1px solid #91dbed;
+
+}
+
+.mystyle td, th {
+    padding: 5px;
+}
+
+.mystyle tr:nth-child(even) {
+    background: #78efea;
+}
+
+.mystyle tr:hover {
+    background: silver;
+    cursor: pointer;
+}    
+
+
+
+
+    
+    
+
+
+hr {
+    background-color: darkblue;
+    color: darkblue;
+    border: none;
+    height: 2px;
+    
+
+}
+
+
+img {
+    margin-left: 0%;
+    margin-top: 0pt;
+    margin-bottom: 0pt;
+    margin-right: 10pt;
+    height: auto%;
+    width: 90%;
+    
+    
+}
+
+
+.CLEARdataset {
+    font-size: 30px;
+    color: #1df24e;  
+}
+
+
+
+.AI_prob {
+    color: red;
+    font-size: 15;    
+}
+
+.clear {
+    clear: both;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+
+
+button {
+    border-width: medium;
+    margin: 10px;    
+}
+
+
+
+
+
+
+
+/* clearfix is from uemy course*/
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.flexi-cont {
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items:flex-start;
+    justify-content: space-between
+}
+
+.counterfactual-table {
+    width: 45%
+}
+
+
+#regress-section {
+    position:relative;
+    width:100%;
+}
+
+#b-counterfactuals {
+    width: 45%;
+    float:left
+        
+}
+
+.simplify-formula {
+    width: 100%;
+    margin-left: 25%;
+    
+}
+
+#reg-formula {
+    margin-left: 0%;
+    margin-right: 0%;
+    font-size: 120%;
+    width:40%;
+    padding: 0;
+
+}
+
+.reg-GRAPH {
+    width: 30%;
+    align-items: center;
+    margin-left: 0%;
+    margin-right: 0%;
+
+        
+}
+.feature-GRAPH {
+    width: 30%;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 0%;
+
+        
+}
+#reg-stat {
+    text-align: justify;
+    margin-top:0%;
+    float: left;
+    font-size: 15px;
+    margin-left: 10%;
+    margin-right:0%;    
+    border-style: solid;
+    border-width: 2px;
+    border-color: #78efea;
+
+   
+}
+
+
+#feature-list {
+    display:contents;
+}
+
+
+
+.smallerheading {
+    font-size: 12px;
+    color: darkblue;
+    font-family: Arial;
+}
+
+
+
+section {
+    width: 100%
+}
+
+#c-counterfactuals {
+    float:left;
+    width: 40%
+}
+
+#c-images {
+    float:left;
+    width: 30%;
+}
+
+#counterfactuals {
+    width: 100%
+}
+
+#Input_data {
+    margin-top: 0%;
+}
+
+.reg-div {
+    margin-top: 0%;
+}
+
+h3 {
+    color: darkblue;
+    font-size: 20px
+}
+
+.counter-def {
+    color: red;
+    font-size: 20px;
+}
+
+.actual-def {
+    color: black;
+    font-size: 15px;
+    
+}
+
+img {
+    
+}
+
+#Feature-title {
+    text-align: center;
+    font-size: 20px;
+}
