@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title> CLEAR Report</title>
+        <link rel="stylesheet" type="text/css" href="CLEAR.css">
+    </head>
+
+    <body>
+
+        <div class="first-div">
+        <h1>CLEAR Report:&nbsp;   <span class="CLEARdataset">
+            Image</span></h1>
+            <hr class="clear">
+            <span class="main-text2"> Prediction to be explained:&nbsp; Observation&nbsp;<span class="AI_prob">0</span> has <span class="AI_prob">1.0</span> probability of belonging to class:&nbsp;  effusion </span>    
+            <hr class="clear">
+                    
+        <h2>Regression  Results<br></h2>    
+        </div>  
+        
+        
+    
+          
+        <div id= "regress-section" class="flexi-cont"> 
+            <div id= "reg-formula">
+                <p id="regression-formula"><font size = "4.5">prediction =  [ 1 + e<sup><b>-w<sup>T</sup>x</sup></b> ]<sup> -1</sup></font size><br><br><font size = "4.5"><b><i>w</i></b><sup>T</sup><b><i>x</font size></i></b> =  -14.0 + 32.0 Seg26 + 36.0 Seg22</p>       
+                <form  id="Simplify-regression">
+                    <input type="checkbox" id="simplify" />
+                    <label for="simplify">Simplify display of regression equation</label>	    	
+	            </form>  
+                
+                <form>      
+                    <fieldset id="Select-features">      
+                        <legend>Select Features</legend>      
+                        <button id="Select-button" type="button">Show</button>
+                    </fieldset>      
+                </form>
+                <p class="main-text"  id= "simplified-equation"> </p> <br>
+            </div>   
+        
+            <div class= "feature-GRAPH">
+                <p id= Feature-title> Feature Importance</p>
+                <img src="Feature_plot.png" alt="Feature Importance plot">         
+            </div>
+
+ 
+        
+            <div class= "reg-GRAPH">
+                <p class=main-text> Regression for Neighbourhood of Observation</p>
+                <img src="CLEAR_plot.png" alt="Regression plot">   
+                
+                <p id=reg-stat> Quality of regression statistic:<br><br>
+                    &nbsp; aic =
+                6.0</p>
+                
+                
+            </div>
+        
+        </div> 
+
+             <div class="clearfix"></div>
+        <hr>    
+        <div id="counterfactuals" class="flexi-cont">    
+            
+            <div id="c-images">
+                <p class=main-text> Original Image</p>
+                <img src="org_image.png" alt="Feature Importance plot">    
+            </div>
+   
+            <div id="c-images"> 
+                <p class=main-text> Key Positive Segments</p>
+                <img src="pos_segmented.png" alt="Feature Importance plot">   
+            </div>
+
+            <div id="c-images"> 
+                <p class=main-text> Key Negative Segments</p>
+                <img src="neg_segmented.png" alt="Feature Importance plot">   
+            </div>
+        
+     
+            <div id="c-counterfactuals">
+                <h2><i>c</i>-Counterfactual Results</h2>
+               <p class= "counter-def">"c-counterfactual value" = categorical value that <i>flips</i> the observation's classification<br><span class="actual-def">"actual c-counterfactual value" determined by running <strong>target</strong>  AI system with c-counterfactual. </span> </p>  
+              <p class= "counterfactual-table" > <table border="1" class="dataframe mystyle">
+  <thead>
+    <tr style="text-align: left;">
+      <th>feature</th>
+      <th>input value</th>
+      <th>c-counterfactual value</th>
+      <th>actual c-counterfactual value</th>
+      <th>regression forecast using c-counterfactual</th>
+      <th>regression forecast error</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table></p>
+            </div>
+         </div>
+        <hr>   
+               
+        
+             <div class="clearfix"></div>
+    
+        
+        <div class= "reg-div">
+            <h3>Input Data</h3>
+            <p id="input-data-table"><table border="1" class="dataframe mystyle">
+  <thead>
+    <tr style="text-align: left;">
+      <th>Feature</th>
+      <th>Seg00</th>
+      <th>Seg01</th>
+      <th>Seg02</th>
+      <th>Seg03</th>
+      <th>Seg04</th>
+      <th>Seg05</th>
+      <th>Seg06</th>
+      <th>Seg07</th>
+      <th>Seg08</th>
+      <th>Seg09</th>
+      <th>Seg10</th>
+      <th>Seg11</th>
+      <th>Seg12</th>
+      <th>Seg13</th>
+      <th>Seg14</th>
+      <th>Seg15</th>
+      <th>Seg16</th>
+      <th>Seg17</th>
+      <th>Seg18</th>
+      <th>Seg19</th>
+      <th>Seg20</th>
+      <th>Seg21</th>
+      <th>Seg22</th>
+      <th>Seg23</th>
+      <th>Seg24</th>
+      <th>Seg25</th>
+      <th>Seg26</th>
+      <th>Seg27</th>
+      <th>Seg28</th>
+      <th>Seg29</th>
+      <th>Seg30</th>
+      <th>Seg31</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table> </p>       
+        </div>
+            
+        <div id="feature-list"> 
+           <p id="features"> ['Seg22', 'Seg26'] </p>  
+           <p id="spreadsheet-data"> [1.0, 1.0] </p>  
+           <p id="weights"> [32.05601611754786, 36.007407731146635] </p>
+           <p id ="intercept">-13.630136635176829</p>
+           <p id ="regression-type">logistic</p>
+        </div>
+        
+
+
+        <script src="CLEARapp.js"></script>
+        
+
+   
+            
+            
+        
+  </body>
+</html>
