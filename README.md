@@ -12,7 +12,7 @@ There are three folders.
 
 
 ## Prerequisites 
-CLEAR-MRI is written in Python 3.7.9 and runs on Windows 10. The YAML file specifing the required configuration is CLEARMRI.yml
+CLEAR-MRI is written in Python 3.7.9 and runs on Windows 10. The YAML file specifing the required configuration is clear_mri.yml
 
 ## CNN training.
 
