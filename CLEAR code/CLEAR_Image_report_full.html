@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title> CLEAR Report</title>
+        <link rel="stylesheet" type="text/css" href="CLEAR.css">
+    </head>
+
+    <body>
+
+        <div class="first-div">
+        <h1>CLEAR Report:&nbsp;   <span class="CLEARdataset">
+            ResNet.pth</span></h1>
+            <hr class="clear">
+            <span class="main-text2"> Prediction to be explained:&nbsp; Observation&nbsp;<span class="AI_prob">1</span> has <span class="AI_prob">0.93</span> probability of belonging to class:&nbsp;  recovery </span>    
+            <hr class="clear">
+                    
+        <h2>Regression  Results<br></h2>    
+        </div>  
+        
+        
+    
+          
+        <div id= "regress-section" class="flexi-cont"> 
+            <div id= "reg-formula">
+                <p id="regression-formula"><font size = "4.5">prediction =  [ 1 + e<sup><b>-w<sup>T</sup>x</sup></b> ]<sup> -1</sup></font size><br><br><font size = "4.5"><b><i>w</i></b><sup>T</sup><b><i>x</font size></i></b> =  -1.8 + 2.3 Background + 0.49 TemporalInfL + 0.41 TemporalMidL + 0.34 TemporalSupL + 0.28 SupraMarginalL + 0.25 TemporalInfR + 0.22 TemporalMidR + 0.23 CalcarineL + 0.18 FusiformR</p>       
+                <form  id="Simplify-regression">
+                    <input type="checkbox" id="simplify" />
+                    <label for="simplify">Simplify display of regression equation</label>	    	
+	            </form>  
+                
+                <form>      
+                    <fieldset id="Select-features">      
+                        <legend>Select Features</legend>      
+                        <button id="Select-button" type="button">Show</button>
+                    </fieldset>      
+                </form>
+                <p class="main-text"  id= "simplified-equation"> </p> <br>
+            </div>   
+        
+            <div class= "feature-GRAPH">
+                <p id= Feature-title> Feature Importance</p>
+                <img src="Feature_plot.png" alt="Feature Importance plot">         
+            </div>
+
+ 
+        
+            <div class= "reg-GRAPH">
+                <p class=main-text> Regression for Neighbourhood of Observation</p>
+                <img src="CLEAR_plot.png" alt="Regression plot">   
+                
+                <p id=reg-stat> Quality of regression statistic:<br><br>
+                    &nbsp; aic =
+                2200.0</p>
+                
+                
+            </div>
+        
+        </div> 
+
+             <div class="clearfix"></div>
+        <hr>    
+        <div id="counterfactuals" class="flexi-cont">    
+            
+            <div id="c-images">
+                <p class=main-text> Original Image</p>
+                <img src="rectangular_image.png" alt="Feature Importance plot">    
+            </div>
+   
+            <div id="c-images"> 
+                <p class=main-text>Key Segments</p>
+                <img src="key_segments.png" alt="Feature Importance plot">   
+            </div>
+
+     
+            <div id="c-counterfactuals">
+                <h2>Counterfactual Results</h2>
+              <p class= "counterfactual-table" > <table border="1" class="dataframe mystyle">
+  <thead>
+    <tr style="text-align: left;">
+      <th>feature</th>
+      <th>AI using c-counterfactual value</th>
+      <th>regression forecast using c-counterfactual</th>
+      <th>fidelity error</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table></p>
+            </div>
+         </div>
+        <hr>   
+               
+        
+             <div class="clearfix"></div>
+    
+        <div class= "sufficient">
+            <h3>Sufficient Causes</h3>
+            <p id="sufficient-list">[] </p>  
+        </div>         
+             
+        <div class= "reg-div">
+            <h3>Input Data</h3>
+            <p id="input-data-table"><table border="1" class="dataframe mystyle">
+  <thead>
+    <tr style="text-align: left;">
+      <th>Feature</th>
+      <th>Seg00</th>
+      <th>Seg01</th>
+      <th>Seg02</th>
+      <th>Seg03</th>
+      <th>Seg04</th>
+      <th>Seg05</th>
+      <th>Seg06</th>
+      <th>Seg07</th>
+      <th>Seg08</th>
+      <th>Seg09</th>
+      <th>Seg10</th>
+      <th>Seg11</th>
+      <th>Seg12</th>
+      <th>Seg13</th>
+      <th>Seg14</th>
+      <th>Seg15</th>
+      <th>Seg16</th>
+      <th>Seg17</th>
+      <th>Seg18</th>
+      <th>Seg19</th>
+      <th>Seg20</th>
+      <th>Seg21</th>
+      <th>Seg22</th>
+      <th>Seg23</th>
+      <th>Seg24</th>
+      <th>Seg25</th>
+      <th>Seg26</th>
+      <th>Seg27</th>
+      <th>Seg28</th>
+      <th>Seg29</th>
+      <th>Seg30</th>
+      <th>Seg31</th>
+      <th>Seg32</th>
+      <th>Seg33</th>
+      <th>Seg34</th>
+      <th>Seg35</th>
+      <th>Seg36</th>
+      <th>Seg37</th>
+      <th>Seg38</th>
+      <th>Seg39</th>
+      <th>Seg40</th>
+      <th>Seg41</th>
+      <th>Seg42</th>
+      <th>Seg43</th>
+      <th>Seg44</th>
+      <th>Seg45</th>
+      <th>Seg46</th>
+      <th>Seg47</th>
+      <th>Seg48</th>
+      <th>Seg49</th>
+      <th>Seg50</th>
+      <th>Seg51</th>
+      <th>Seg52</th>
+      <th>Seg53</th>
+      <th>Seg54</th>
+      <th>Seg55</th>
+      <th>Seg56</th>
+      <th>Seg57</th>
+      <th>Seg58</th>
+      <th>Seg59</th>
+      <th>Seg60</th>
+      <th>Seg61</th>
+      <th>Seg62</th>
+      <th>Seg63</th>
+      <th>Seg64</th>
+      <th>Seg65</th>
+      <th>Seg66</th>
+      <th>Seg67</th>
+      <th>Seg68</th>
+      <th>Seg69</th>
+      <th>Seg70</th>
+      <th>Seg71</th>
+      <th>Seg72</th>
+      <th>Seg73</th>
+      <th>Seg74</th>
+      <th>Seg75</th>
+      <th>Seg76</th>
+      <th>Seg77</th>
+      <th>Seg78</th>
+      <th>Seg79</th>
+      <th>Seg80</th>
+      <th>Seg81</th>
+      <th>Seg82</th>
+      <th>Seg83</th>
+      <th>Seg84</th>
+      <th>Seg85</th>
+      <th>Seg86</th>
+      <th>Seg87</th>
+      <th>Seg88</th>
+      <th>Seg89</th>
+      <th>Seg90</th>
+      <th>Seg91</th>
+      <th>Seg92</th>
+      <th>Seg93</th>
+      <th>Seg94</th>
+      <th>Seg95</th>
+      <th>Seg96</th>
+      <th>Seg97</th>
+      <th>Seg98</th>
+      <th>Seg99</th>
+      <th>dSeg100</th>
+      <th>dSeg101</th>
+      <th>dSeg102</th>
+      <th>dSeg103</th>
+      <th>dSeg104</th>
+      <th>dSeg105</th>
+      <th>dSeg106</th>
+      <th>dSeg107</th>
+      <th>dSeg108</th>
+      <th>dSeg109</th>
+      <th>dSeg110</th>
+      <th>dSeg111</th>
+      <th>dSeg112</th>
+      <th>dSeg113</th>
+      <th>dSeg114</th>
+      <th>dSeg115</th>
+      <th>dSeg116</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table> </p>       
+        </div>
+            
+        <div id="feature-list"> 
+           <p id="features"> ['TemporalInfR', 'FusiformR', 'TemporalMidR', 'SupraMarginalL', 'TemporalSupL', 'TemporalInfL', 'Background', 'CalcarineL', 'TemporalMidL'] </p>  
+           <p id="spreadsheet-data"> [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0] </p>  
+           <p id="weights"> [2.2697229829031773, 0.4925025139628728, 0.4069811138676337, 0.3438796862085871, 0.283035734619913, 0.2528608421152123, 0.22152024967294703, 0.22644452654728237, 0.18428382486824635] </p>
+           <p id ="intercept">-1.7673073227472988</p>
+           <p id ="regression-type">logistic</p>
+        </div>
+        
+
+
+        <script src="CLEARapp.js"></script>
+        
+
+   
+            
+            
+        
+  </body>
+</html>
