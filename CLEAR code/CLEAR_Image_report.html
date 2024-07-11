@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title> CLEAR Report</title>
+        <link rel="stylesheet" type="text/css" href="CLEAR.css">
+    </head>
+
+    <body>
+
+        <div class="first-div">
+        <h1>CLEAR Report:&nbsp;   <span class="CLEARdataset">
+            {{dataset_name}}</span></h1>
+            <hr class="clear">
+            <span class="main-text2"> Prediction to be explained:&nbsp; Observation&nbsp;<span class="AI_prob">{{observation_number}}</span> has <span class="AI_prob">{{AI_prediction}}</span> probability of belonging to class:&nbsp;  {{explanadum}} </span>    
+            <hr class="clear">
+                    
+        <h2>Regression  Results<br></h2>    
+        </div>  
+        
+        
+    
+          
+        <div id= "regress-section" class="flexi-cont"> 
+            <div id= "reg-formula">
+                <p id="regression-formula">{{ regression_formula }}</p>       
+                <form  id="Simplify-regression">
+                    <input type="checkbox" id="simplify" />
+                    <label for="simplify">Simplify display of regression equation</label>	    	
+	            </form>  
+                
+                <form>      
+                    <fieldset id="Select-features">      
+                        <legend>Select Features</legend>      
+                        <button id="Select-button" type="button">Show</button>
+                    </fieldset>      
+                </form>
+                <p class="main-text"  id= "simplified-equation"> </p> <br>
+            </div>   
+        
+            <div class= "feature-GRAPH">
+                <p id= Feature-title> Feature Importance</p>
+                <img src="Feature_plot.png" alt="Feature Importance plot">         
+            </div>
+
+ 
+        
+            <div class= "reg-GRAPH">
+                <p class=main-text> Regression for Neighbourhood of Observation</p>
+                <img src="CLEAR_plot.png" alt="Regression plot">   
+                
+                <p id=reg-stat> Quality of regression statistic:<br><br>
+                    &nbsp; {{regression_score_type}} =
+                {{prediction_score}}</p>
+                
+                
+            </div>
+        
+        </div> 
+
+             <div class="clearfix"></div>
+        <hr>    
+        <div id="counterfactuals" class="flexi-cont">    
+            
+            <div id="c-images">
+                <p class=main-text> Original Image</p>
+                <img src="rectangular_image.png" alt="Feature Importance plot">    
+            </div>
+   
+            <div id="c-images"> 
+                <p class=main-text>Key Segments</p>
+                <img src="key_segments.png" alt="Feature Importance plot">   
+            </div>
+
+     
+            <div id="c-counterfactuals">
+                <h2>Counterfactual Results</h2>
+              <p class= "counterfactual-table" > {{cat_counterfactual_table}}</p>
+            </div>
+         </div>
+        <hr>   
+               
+        
+             <div class="clearfix"></div>
+    
+        <div class= "sufficient">
+            <h3>Sufficient Causes</h3>
+            <p id="sufficient-list">{{ sufficient }} </p>  
+        </div>         
+             
+        <div class= "reg-div">
+            <h3>Input Data</h3>
+            <p id="input-data-table">{{ input_data_table }} </p>       
+        </div>
+            
+        <div id="feature-list"> 
+           <p id="features"> {{ feature_list }} </p>  
+           <p id="spreadsheet-data"> {{ spreadsheet_data }} </p>  
+           <p id="weights"> {{ weights }} </p>
+           <p id ="intercept">{{intercept}}</p>
+           <p id ="regression-type">{{regression_type}}</p>
+        </div>
+        
+
+
+        <script src="CLEARapp.js"></script>
+        
+
+   
+            
+            
+        
+  </body>
+</html>

@@ -5,10 +5,9 @@ import CLEAR_perturbations
 import CLEAR_regression
 import CLEAR_settings
 import CLEAR_image
-from datetime import datetime
 import torch
 import torch.nn as nn
-
+from datetime import datetime
 
 class CNN(nn.Module):
     def __init__(self):
@@ -59,6 +58,7 @@ class CNN(nn.Module):
 def Run_CLEAR_MRI():
     CLEAR_settings.init()
     model = torch.load(CLEAR_settings.model_path + CLEAR_settings.image_model_name)
+    c_counter_master_df = pd.read_pickle(CLEAR_settings.CLEAR_path + "c_counter_master_df.pkl")
     results_master_df = pd.read_pickle(CLEAR_settings.CLEAR_path + "results_master_df.pkl")
     np.random.seed(CLEAR_settings.random_seed)
     rectangular_images= np.load(CLEAR_settings.images_path+ 'rectangular_images.npy') # created when training neural net model. Corresponds to array 's' i.e before transform operations.                                                                        # used only for output report.
@@ -88,11 +88,16 @@ def Run_CLEAR_MRI():
             if single_regress.perfect_separation is True:
                 print('perfect separation')
             (nncomp_df, missing_log_df) = CLEAR_perturbations.Calculate_Perturbations(explainer, results_df)
+            c_counter_df=CLEAR_perturbations.Single_prediction_report(results_df, nncomp_df, single_regress, explainer)
+            c_counter_master_df = c_counter_master_df.append(c_counter_df, ignore_index = True)
+
             results_master_df =  results_master_df.append(results_df, ignore_index=True)
             missing_log_df.to_csv(CLEAR_settings.CLEAR_path + 'Missing.csv', index=False)
             print(str(Master_idx))
         except:
             print('no explanation generated for ' + str(Master_idx))
+    c_counter_master_df.to_pickle(
+    CLEAR_settings.CLEAR_path + 'c_batch_df' + datetime.now().strftime("%Y%m%d-%H%M%S%f") + '.pkl')
     results_master_df.to_pickle(CLEAR_settings.CLEAR_path + 'results_batch_df.pkl')
     results_master_df.to_csv(CLEAR_settings.CLEAR_path + 'Results.csv', index=False)
     print('run completed')
