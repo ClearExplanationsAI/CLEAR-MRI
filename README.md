@@ -12,9 +12,6 @@ There are three folders.
 * Statistical Verication. stores the scripts for the statistical analyses specified in appendices A1 and A2.
 
 
-## Prerequisites 
-CLEAR-MRI is written in Python 3.7.9 and runs on Windows 10. The YAML file specifing the required configuration is clear_mri.yml
-
 ## CNN training.
 
 Lockbox.py is the script for training the CNNs evaulated in the paper.
@@ -37,15 +34,18 @@ The CNN models are calbrated using a single parameter variant of Platt scaling. 
 
 
 ## CLEAR-MRI
+CLEAR-MRI is written in Python 3.7.9 and runs on Windows 10. The YAML file specifing the required configuration is clear_mri.yml
+
 CLEAR-MRI requires the following input files:
 *  the Pytorch CNN that classifies each 2-D MRI image. These can either be stitched images or hybrid stitched images.
-*  numpy array of 2D stitched images, spreadsheet of PLORAS tabular data and file mapping stitch images to ROIs of 2D MRI images specified above.  
+*  numpy array of 2D stitched images, spreadsheet of PLORAS tabular data and file mapping stitch images to ROIs of 2D MRI images specified above.
+
+The file CLEAR_settings.py contains the parameter variables for CLEAR-MRI. Open CLEAR_settings.py and change the value of parameter CLEAR_path to the name of the directory you have created for CLEAR e.g., CLEAR_path='D:/CLEAR/'.  
+CLEAR-MRI is run by running CLEAR.py. CLEAR-MRI can be run either to explain the prediction of a single (hybrid) stitched image or a batch of such images. In the case of a single image, CLEAR-MRI will generate a HTML report explaining a single prediction if only one image is listed in the csv file. The report is entitled ‘CLEAR_Image_report_full.html'.
 
 ##  Statistical Verification
 
 
-## Running CLEAR-MRI 
-The file CLEAR_settings.py contains the parameter variables for CLEAR-MRI. Open CLEAR_settings.py and change the value of parameter CLEAR_path to the name of the directory you have created for CLEAR e.g., CLEAR_path='D:/CLEAR/'.  
-CLEAR-MRI is run by running CLEAR.py. CLEAR-MRI can be run either to explain the prediction of a single (hybrid) stitched image or a batch of such images. In the case of a single image, CLEAR-MRI will generate a HTML report explaining a single prediction if only one image is listed in the csv file. The report is entitled ‘CLEAR_Image_report_full.html'.
+
 
 
