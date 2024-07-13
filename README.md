@@ -14,7 +14,7 @@ There are three folders.
 
 ## CNN training.
 
-Lockbox.py is the script for training the CNNs evaulated in the paper.
+Lockbox final.py is the script for training the CNNs evaulated in the paper.
 
 Nine CNN models can be trained, as listed on page 9 of the paper.
 
