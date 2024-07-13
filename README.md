@@ -32,12 +32,12 @@ The following input files are required:
 *  a csv file mapping the 632 x 740 pixels in each stitched image to grey matter anatomical regions-of-interest (ROIs).The Matlab script 'ROIs_map.m' creates this csv file using Brainnetome_v1.0.2\Template\aal.nii
 * For training CNNs on either the ROI dataset or the Hybrid ROI dataset, 'Create Hybrid ROI Images.py' must first be run to create a numpy array 'new training.npy' of the new images.
 
-The CNN models are calbrated using a single parameter variant of Platt scaling to calibrate the classification as specified by . This done using a script temperature.py. The calibration algorithm is from Chuan Guo, Geoff Pleiss, Yu Sun, Kilian Q. Weinberger Proceedings of the 34th International Conference on Machine Learning, PMLR 70:1321-1330, 2017. Our script temperature.py is a modified copy of Pleiss's script http://github.com/gpleiss/temperature_scaling
+The CNN models are calbrated using a single parameter variant of Platt scaling. The calibration algorithm is from: Chuan Guo, Geoff Pleiss, Yu Sun, Kilian Q. Weinberger Proceedings of the 34th International Conference on Machine Learning, PMLR 70:1321-1330, 2017. Our script temperature.py is a modified copy of Pleiss's script from http://github.com/gpleiss/temperature_scaling.
 
 
 ## CLEAR-MRI
 CLEAR-MRI requires the following input files:
-*  the Pytorch CNN that classifies each 2-D MRI image. These can either be stitched images or hybrid images.
+*  the Pytorch CNN that classifies each 2-D MRI image. These can either be stitched images or hybrid stitched images.
 *  numpy array of 2D stitched images, spreadsheet of PLORAS tabular data and file mapping stitch images to ROIs of 2D MRI images specified above.  
 
 ##  Statistical Verification
@@ -45,7 +45,7 @@ CLEAR-MRI requires the following input files:
 
 ## Installation 
 The file CLEAR_settings.py contains the parameter variables for CLEAR MRI. Open CLEAR_settings.py and change the value of parameter CLEAR_path to the name of the directory you have created for CLEAR e.g., CLEAR_path='D:/CLEAR/'. 
-## Running CLEAR Image 
+## Running CLEAR-MRI 
 Running CLEAR.py will process all the images listed in ‘Medical.csv' for CheXpert or ‘Synthetic Images.csv’ for the synthetic dataset. CLEAR will generate a HTML report explaining a single prediction if only one image is listed in the csv file. The report is entitled ‘CLEAR_Image_report_full.html'. It is expected that CLEAR Image will normally be run for single images (rather than batches of images). For each image listed in the csv file, a png file and a csv file of CLEAR’s corresponding saliency map is generated; they are saved to the directory specified by CLEAR_path, and should be transferred to a results folder that the user has created. 
 Two detailed Excel spreadsheets are also created each time that CLEAR Image is run. ‘Fidelity.xlsx’ contains data for each counterfactual that CLEAR Image identifies. ‘Results_Xrays.xlsx’ contains regression data for each image, column L can be used to calculate the number of images that were classified as ‘causally overdetermined’. It is not expected that a user would normally access either of these spreadsheets. 
 
