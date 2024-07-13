@@ -8,7 +8,8 @@ NeuroImage: Clinical (2024)
 There are three folders. 
 
 * CNN training stores the scripts for training the CNNs referenced in the paper.
-* CLEAR-MRI stores the scripts for the explaianable AI method CLEAR-MRI that explains the classifications of a CNN trained on the PLORAS dataset. 
+* CLEAR-MRI stores the scripts for the explaianable AI method CLEAR-MRI that explains the classifications of a CNN trained on the PLORAS dataset.
+* Statistical Verication. stores the scripts for the statistical analyses specified in appendices A1 and A2.
 
 
 ## Prerequisites 
