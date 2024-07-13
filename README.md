@@ -43,10 +43,8 @@ CLEAR-MRI requires the following input files:
 ##  Statistical Verification
 
 
-## Installation 
-The file CLEAR_settings.py contains the parameter variables for CLEAR MRI. Open CLEAR_settings.py and change the value of parameter CLEAR_path to the name of the directory you have created for CLEAR e.g., CLEAR_path='D:/CLEAR/'. 
 ## Running CLEAR-MRI 
-Running CLEAR.py will process all the images listed in ‘Medical.csv' for CheXpert or ‘Synthetic Images.csv’ for the synthetic dataset. CLEAR will generate a HTML report explaining a single prediction if only one image is listed in the csv file. The report is entitled ‘CLEAR_Image_report_full.html'. It is expected that CLEAR Image will normally be run for single images (rather than batches of images). For each image listed in the csv file, a png file and a csv file of CLEAR’s corresponding saliency map is generated; they are saved to the directory specified by CLEAR_path, and should be transferred to a results folder that the user has created. 
-Two detailed Excel spreadsheets are also created each time that CLEAR Image is run. ‘Fidelity.xlsx’ contains data for each counterfactual that CLEAR Image identifies. ‘Results_Xrays.xlsx’ contains regression data for each image, column L can be used to calculate the number of images that were classified as ‘causally overdetermined’. It is not expected that a user would normally access either of these spreadsheets. 
+The file CLEAR_settings.py contains the parameter variables for CLEAR-MRI. Open CLEAR_settings.py and change the value of parameter CLEAR_path to the name of the directory you have created for CLEAR e.g., CLEAR_path='D:/CLEAR/'.  
+CLEAR-MRI is run by running CLEAR.py. CLEAR-MRI can be run either to explain the prediction of a single (hybrid) stitched image or a batch of such images. In the case of a single image, CLEAR-MRI will generate a HTML report explaining a single prediction if only one image is listed in the csv file. The report is entitled ‘CLEAR_Image_report_full.html'.
 
 
