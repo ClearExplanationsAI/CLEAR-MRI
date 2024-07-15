@@ -9,12 +9,12 @@ There are three folders.
 
 * CNN training stores the scripts for training the CNNs referenced in the paper.
 * CLEAR-MRI stores the scripts for the explaianable AI method CLEAR-MRI that explains the classifications of a CNN trained on the PLORAS dataset.
-* Statistical Verication. stores the scripts for the statistical analyses specified in appendices A1 and A2.
+* Statistical Verication stores the scripts for the statistical analyses specified in appendices A1 and A2. In addition, it contains the script for calculating AUC and F1 scores for all models.
 
 
-## CNN training.
+## CNN training
 
-Lockbox final.py is the script for training the CNNs evaulated in the paper.
+Lockbox final.py is the script for training the CNNs evaluated in the paper.
 
 Nine CNN models can be trained, as listed on page 9 of the paper.
 
@@ -34,6 +34,7 @@ The CNN models are calbrated using a single parameter variant of Platt scaling. 
 
 
 ## CLEAR-MRI
+
 CLEAR-MRI is written in Python 3.7.9 and runs on Windows 10. The YAML file specifing the required configuration is clear_mri.yml
 
 CLEAR-MRI requires the following input files:
@@ -45,7 +46,13 @@ CLEAR-MRI is run by running CLEAR.py. CLEAR-MRI can be run either to explain the
 
 ##  Statistical Verification
 
+The scripts in this folder are used to:
+* Run a simulation of our cross-validation procedure under the null to show the inflation of the false-positive rate.
+* Calculate confidence intervals for the unbalanced test accuracy and balanced test accuracy across all patients and across language impaired patients for all the models.
+* Calculate AUC and F1 scores for each model in the paper, along with their confidence intervals.
+* Perform paired t-tests to compare the best model reported in the paper (Hybrid ROIs w/ ResNet-18) with all the rest of the models.
 
+The simulation led to the development of a new method for correcting the degrees of freedom to be able to perform a t-test that does not increase the type-1 error rate. This is the procedure described in Appendix A1 of the paper. The calculation of confidence intervals for unbalanced and balanced accuracies as well as AUC and F1 scores all followed the method described in the appendix. 
 
 
 
