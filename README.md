@@ -47,12 +47,18 @@ CLEAR-MRI is run by running CLEAR.py. CLEAR-MRI can be run either to explain the
 ##  Statistical Verification
 
 The scripts in this folder are used to:
-* Run a simulation of our cross-validation procedure under the null to show the inflation of the false-positive rate.
+* Run a simulation of our cross-validation procedure under the null to show the inflation of the false-positive rate for a number of statistical tests, see figure A1 of the paper.
 * Calculate confidence intervals for the unbalanced test accuracy and balanced test accuracy across all patients and across language impaired patients for all the models.
 * Calculate AUC and F1 scores for each model in the paper, along with their confidence intervals.
 * Perform paired t-tests to compare the best model reported in the paper (Hybrid ROIs w/ ResNet-18) with all the rest of the models.
 
-The simulation led to the development of a new method for correcting the degrees of freedom to be able to perform a t-test that does not increase the type-1 error rate. This is the procedure described in Appendix A1 of the paper. The calculation of confidence intervals for unbalanced and balanced accuracies as well as AUC and F1 scores all followed the method described in the appendix. 
+The simulation led to the development of a new method for correcting the degrees of freedom to be able to perform a t-test that does not increase the type-1 error rate. This is the procedure described in appendix A1 of the paper. The paired t-tests in statisticalTests_with_dfCorrection.py are performed after applying this degrees of freedom correction. Similarly, the calculation of confidence intervals for unbalanced and balanced accuracies as well as AUC and F1 scores all follow the method described in the appendix.
+
+All the scripts in this folder (apart from the simulation) require the detailed spreadsheets with results that are generated after running Lockbox final.py from the CNN training folder:
+* statisticalTests_with_dfCorrection.py and confidence_intervals_calculation.py require the spreadsheets saved from test_df in Lockbox final.py and
+* calculate_AUC_F1_scores.py requires the spreadsheets saved from detail_df in Lockbox final.py
+  
+The path in the beginning of each script has to be changed to the respective folder where these spreadsheets are saved. 
 
 
 
