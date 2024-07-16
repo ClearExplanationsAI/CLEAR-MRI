@@ -47,10 +47,10 @@ CLEAR-MRI is run by running CLEAR.py. CLEAR-MRI can be run either to explain the
 ##  Statistical Verification
 
 The scripts in this folder are used to:
-* Run a simulation of our cross-validation procedure under the null to show the inflation of the false-positive rate for a number of statistical tests, see figure A1 of the paper.
-* Calculate confidence intervals for the unbalanced test accuracy and balanced test accuracy across all patients and across language impaired patients for all the models.
-* Calculate AUC and F1 scores for each model in the paper, along with their confidence intervals.
-* Perform paired t-tests to compare the best model reported in the paper (Hybrid ROIs w/ ResNet-18) with all the rest of the models.
+* Run a simulation of our cross-validation procedure under the null to show the inflation of the false-positive rate for a number of statistical tests (testing_cross_validation_for_paper.m), see figure A1 of the paper.
+* Calculate confidence intervals for the unbalanced test accuracy and balanced test accuracy across all patients and across language impaired patients for all the models (confidence_intervals_calculation.py).
+* Calculate AUC and F1 scores for each model in the paper, along with their confidence intervals (calculate_AUC_F1_scores.py).
+* Perform paired t-tests to compare the best model reported in the paper (Hybrid ROIs w/ ResNet-18) with all the rest of the models (statisticalTest_with_dfCorrection.py).
 
 The simulation led to the development of a new method for correcting the degrees of freedom to be able to perform a t-test that does not increase the type-1 error rate. This is the procedure described in appendix A1 of the paper. The paired t-tests in statisticalTests_with_dfCorrection.py are performed after applying this degrees of freedom correction. Similarly, the calculation of confidence intervals for unbalanced and balanced accuracies as well as AUC and F1 scores all follow the method described in the appendix.
 
